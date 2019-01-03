@@ -9,8 +9,7 @@ This project is driven using [maven].
 
 ### Run Axon Server
 
-Axon Server is used for message (commands, events, query) routing. To fallback to simple command, query and event buses exclude `axon-server-connector` from `axon-spring-boot-starter` maven dependency in [pom file](pom.xml).
-
+Axon Server is used for message routing (MongoDB is used as event store/bus).
 You can [download](https://download.axoniq.io/axonserver/AxonServer.zip) a ZIP file with AxonServer as a standalone JAR. This will also give you the AxonServer CLI and information on how to run and configure the server.
 
 Alternatively, you can run the following command to start AxonServer in a Docker container:
@@ -18,6 +17,9 @@ Alternatively, you can run the following command to start AxonServer in a Docker
 ```
 $ docker run -d --name axonserver -p 8024:8024 -p 8124:8124 axoniq/axonserver
 ```
+
+> NOTE: To remove Axon Server completely and fallback to `simple` message buses exclude `axon-server-connector` from `axon-spring-boot-starter` maven dependency in [pom file](pom.xml).
+
 
 ### Run locally
 
