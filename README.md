@@ -37,20 +37,30 @@ tests using Maven:
 $ ./mvnw test
 ```
 
-### Mongo database
+### Run Mongo database
 
 For this demo to work, you must stand up a local MongoDB server.
 
 On a Mac OS X machine with homebrew, just do this:
 
-```$xslt
+```
 $ brew install mongodb
 $ brew services start mongo
 
 ```
 More installation options are found at http://docs.mongodb.org/manual/installation/.
 
+### Try it with CURL
 
+#### POST / Issue a gift card
+```
+$ curl -i -X POST -H 'Content-Type:application/json' -d '{"value" : "1002"}' 'http://localhost:8080/cards'
+```
+
+#### GET all gift cards
+```
+$ curl http://localhost:8080/cards
+```
 
 ---
 
