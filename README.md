@@ -1,10 +1,15 @@
 # axon-mongo-demo
 Based on seed project `idugalic:axon-java-spring-maven-seed`
+
+This Axon demo project demonstrates use of MongoDB as an event storage. Spring configuration is located in the main [application class](src/main/java/com/demo/AxonMongoDemoApplication.java).
+
 ## Development
 
 This project is driven using [maven].
 
 ### Run Axon Server
+
+Axon Server is used for message (commands, events, query) routing. To fallback to simple command, query and event buses exclude `axon-server-connector` from `axon-spring-boot-starter` maven dependency in [pom file](pom.xml).
 
 You can [download](https://download.axoniq.io/axonserver/AxonServer.zip) a ZIP file with AxonServer as a standalone JAR. This will also give you the AxonServer CLI and information on how to run and configure the server.
 
@@ -32,9 +37,20 @@ tests using Maven:
 $ ./mvnw test
 ```
 
-### In-memory database
+### Mongo database
 
-We use H2 SQL databse. Web console is enabled and it should be available on `/h2-console` URL (eg. `http://localhost:8080/h2-console`). Check  `application.properties` for the datasource URL.
+For this demo to work, you must stand up a local MongoDB server.
+
+On a Mac OS X machine with homebrew, just do this:
+
+```$xslt
+$ brew install mongodb
+$ brew services start mongo
+
+```
+More installation options are found at http://docs.mongodb.org/manual/installation/.
+
+
 
 ---
 
