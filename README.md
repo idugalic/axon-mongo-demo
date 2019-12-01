@@ -1,4 +1,4 @@
-# axon-mongo-demo
+# [projects](http://idugalic.github.io/projects)/axon-mongo-demo
 Based on seed project `idugalic:axon-java-spring-maven-seed`
 
 This Axon demo project demonstrates use of MongoDB as an event storage. Spring configuration is located in the main [application class](src/main/java/com/demo/AxonMongoDemoApplication.java).
